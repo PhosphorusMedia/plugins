@@ -75,7 +75,7 @@ impl Plugin for YouTube {
 /// Creates a sub-process that downloads the media associated to `url`. That media is than
 /// saved as `file_name.[ext]`. The handler to the sub-process is returned.
 pub fn download_fn(url: &str, file_name: &str) -> Result<Child, Box<dyn Error>> {
-    let mut download_command = Command::new("youtube-dl");
+    let mut download_command = Command::new("yt-dlp");
     download_command.args(["--extract-audio", "--audio-format", "mp3"]);
     let output_file = format!("{}.%(ext)s", file_name);
     download_command.args(["-o", &output_file]);
