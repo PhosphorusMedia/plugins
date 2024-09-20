@@ -1,5 +1,5 @@
 use async_trait::async_trait;
-use plugin_manager::{
+use phosphorus_core::plugin_manager::{
     downloader::*,
     error::{ParseError, PluginError},
     plugin::Plugin,
